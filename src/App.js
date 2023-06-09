@@ -13,7 +13,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get('http://prospect-path/api/breweries')
+    axios.get('http://laravel-8-api-example/api/breweries')
       .then(function (response) {
         dispatch(setbrewaries({data: response.data}))
       })
@@ -29,7 +29,7 @@ function App() {
   }, [dispatch])
 
   const searchByName = (inputValue) => {
-    axios.get(`http://prospect-path/api/breweries/${inputValue}`)
+    axios.get(`http://laravel-8-api-example/api/breweries/${inputValue}`)
       .then(function (response) {
         dispatch(setbrewaries({data: response.data}))
       })
